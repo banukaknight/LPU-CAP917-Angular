@@ -117,8 +117,13 @@
               "devServerTarget": "LPU-CAP917-Angular:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "LPU-CAP917-Angular"
 }
