@@ -1,0 +1,33 @@
+p{color:red;}
+h2{color:green;}
+h1{color:yellow;}
+
+#div_bca{
+  background-color: lightgreen;
+  border: 2px solid red;
+  padding: 5px;
+}
+
+#ol_id{
+  font-size: 1.2em;
+  font-family:comic sans ms;
+}
+
+#div_id, #div_title, #div_author{
+  padding: 3px;
+  display: inline-block;
+}
+
+#div_id{
+  background-color: lightyellow;
+  width: 3em;
+}
+
+#div_title{
+  background-color: lightgreen;
+  width: 12em;
+}
+#div_author{
+  background-color: lightyellow;
+  width: 10em;
+}

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'LPU-CAP917-Angular';
+  title = 'Banuka Knight';
+  cv = "http://banukaknight.github.io/";
 }

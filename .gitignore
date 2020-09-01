@@ -1,3 +1,7 @@
+#BK's ignore stuff
+CA/
+/src/app/ca1/
+
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output

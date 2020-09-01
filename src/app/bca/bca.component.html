@@ -1,0 +1,53 @@
+<div id=div_bca>
+<h1>this is bca.component,html file's content </h1>
+
+<h2>{{title2}}</h2>
+<p> paragraph content from templete.<br>
+{{ getflower() }}
+{{3+2}}
+</p>
+
+Flowers:
+<ol>
+<li *ngFor="let flow of flowers">
+  {{this.flow}}</li>
+</ol>
+
+div with ngFor..
+<div *ngFor="let flow of flowers">
+  {{this.flow}} </div>
+
+<br />
+List stuff components.ts:
+  <ul>
+  <li *ngFor="let emp of employees">
+    {{emp.id}} - {{emp.name}} - {{emp.age}}</li>
+  </ul>
+
+  <br />
+  List stuff 2nd service file:
+    <ul>
+    <li *ngFor="let art of artists_list">
+      {{art.id}} --- {{art.name}} --- {{art.age}}</li>
+    </ul>
+
+
+  <h4>CA-1-g1 stuff</h4>
+  <h2>Student List:</h2>
+  <ul>
+    <li *ngFor="let st of student_list">
+      {{this.st}}
+    </li>
+  </ul>
+
+  <h2>Book List:</h2>
+  <ol id=ol_id>
+    <li *ngFor="let book of book_array">
+      <div id=div_id> {{book.b_id}} </div>
+      <div id=div_title> {{book.b_title}} </div>
+      <div id=div_author> {{book.b_author}} </div>
+    </li>
+  </ol>
+
+  <marquee direction="right">bca.component.html</marquee>
+</div>
