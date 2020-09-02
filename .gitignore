@@ -1,6 +1,10 @@
 #BK's ignore stuff
 CA/
 /src/app/ca1/
+/src/app/ca1t1/
+/src/app/ca1t2/
+
+
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 

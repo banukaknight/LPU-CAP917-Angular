@@ -3,3 +3,11 @@
   border: 1px solid black;
   padding: 0px;
 }
+
+div a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}

@@ -12,13 +12,17 @@ import { PracticleService } from './practicle.service';
 import { HomeComponent } from './home/home.component';
 import { BcaComponent } from './bca/bca.component';
 import { Ca1Component } from './ca1/ca1.component';
+import { Ca1t1Component } from './ca1t1/ca1t1.component';
+import { Ca1t2Component } from './ca1t2/ca1t2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BcaComponent,
-    Ca1Component
+    Ca1Component,
+    Ca1t1Component,
+    Ca1t2Component
   ],
   imports: [
     BrowserModule,
