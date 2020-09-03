@@ -38,7 +38,7 @@ export class BcaComponent implements OnInit {
     {"id":"154", "name":"Bean", "age":60}
     ];
 
-  // students = [{"id":"143", "name":"Deean", "age":30}];
+  students = [{"id":"143", "name":"Deean", "age":30}];
   // students.push( {"id":"123", "name":"Mathew", "age":30} );
   // students.push( {"id":"433", "name":"Jeet", "age":70} );
   // students.push( {"id":"123", "name":"Deean", "age":30} );
