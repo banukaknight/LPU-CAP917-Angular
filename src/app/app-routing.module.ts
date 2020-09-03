@@ -7,11 +7,12 @@ import { BcaComponent } from './bca/bca.component';
 import { Ca1Component } from './ca1/ca1.component';
 import { Ca1t1Component } from './ca1t1/ca1t1.component';
 import { Ca1t2Component } from './ca1t2/ca1t2.component';
-
+import { ClassComponent } from './class/class.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
 	{ path: '', component: HomeComponent },
+	{ path: 'Class', component: ClassComponent },
 	{ path: 'BCA', component: BcaComponent },
 	{ path: 'CA1-Inject', component: Ca1Component },
 	{ path: 'CA1-Temp1', component: Ca1t1Component },

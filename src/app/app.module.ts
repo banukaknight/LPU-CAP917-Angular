@@ -14,6 +14,7 @@ import { BcaComponent } from './bca/bca.component';
 import { Ca1Component } from './ca1/ca1.component';
 import { Ca1t1Component } from './ca1t1/ca1t1.component';
 import { Ca1t2Component } from './ca1t2/ca1t2.component';
+import { ClassComponent } from './class/class.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Ca1t2Component } from './ca1t2/ca1t2.component';
     BcaComponent,
     Ca1Component,
     Ca1t1Component,
-    Ca1t2Component
+    Ca1t2Component,
+    ClassComponent
   ],
   imports: [
     BrowserModule,
