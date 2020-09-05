@@ -7,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassComponent implements OnInit {
 
+/*property binding*/
+
 	myid1 = "id1";
 	myid2 = "id1";
 
 	isDisabled=true;
-	value1 = "Harry"
+	value1 = "Harry";
+
+
+
 
   constructor() { }
 

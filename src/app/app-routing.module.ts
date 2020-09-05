@@ -8,6 +8,8 @@ import { Ca1Component } from './ca1/ca1.component';
 import { Ca1t1Component } from './ca1t1/ca1t1.component';
 import { Ca1t2Component } from './ca1t2/ca1t2.component';
 import { ClassComponent } from './class/class.component';
+import { BindingComponent } from './binding/binding.component';
+import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
@@ -17,8 +19,10 @@ const routes: Routes = [
 	{ path: 'CA1-Inject', component: Ca1Component },
 	{ path: 'CA1-Temp1', component: Ca1t1Component },
 	{ path: 'CA1-Temp2', component: Ca1t2Component },
+	{ path: 'Binding', component: BindingComponent },
+	{ path: 'Events', component: EventsComponent },
 
-  
+
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }

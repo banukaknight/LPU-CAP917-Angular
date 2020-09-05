@@ -15,6 +15,8 @@ import { Ca1Component } from './ca1/ca1.component';
 import { Ca1t1Component } from './ca1t1/ca1t1.component';
 import { Ca1t2Component } from './ca1t2/ca1t2.component';
 import { ClassComponent } from './class/class.component';
+import { BindingComponent } from './binding/binding.component';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ClassComponent } from './class/class.component';
     Ca1Component,
     Ca1t1Component,
     Ca1t2Component,
-    ClassComponent
+    ClassComponent,
+    BindingComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
