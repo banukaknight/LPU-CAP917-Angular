@@ -4,6 +4,10 @@
   padding: 0px;
 }
 
+.div_router{
+	padding: 0;
+}
+
 div a:hover {
   background-color: #111;
 }

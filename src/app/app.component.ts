@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Banuka Knight';
   cv = "http://banukaknight.github.io/";
+
+  collapsed = true;
 }

@@ -123,6 +123,17 @@ bind-target="expression"
   <p>dynamic binding using squre-brac has more precedence over static html property</p>
 
 
+<h1>d200910 Two way binding</h1>
+
+Two way bind <input [(ngModel)]="name1" type="text">
+<h2>Input was: {{name1}}</h2>
+<h2>Name 2 is: {{name2}}</h2>
+
+
+
+
+
+
 <br><br><br><br><br><br><br>
 </div>
   `,
@@ -179,6 +190,15 @@ spc3 = "green";
 var9 = "letter-spacing:1em; color:red; background-color:yellow"; //style string
 obj10 = {"letter-spacing":"0.5em", "color":"blue", "background-color":"pink"}; //key-value onject
 arr2 = [ "color","red"]; //not work
+
+
+//d200910 twoway binding
+name1 = 'ee';
+name2 = this.name1+'hello';
+
+
+
+
 
   constructor() { }
 

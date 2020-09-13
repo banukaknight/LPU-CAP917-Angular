@@ -1,37 +1,46 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 <div id=divcomp>
 
-<!-- Navigation bar to browse sub-pages -->
-<nav class="navbar nav-pills navbar-expand navbar-dark bg-dark">
+
+
+  <!-- Navigation bar to browse sub-pages -->
+
+
+
+
+
+  <nav class="navbar nav-pills navbar-expand navbar-dark bg-dark" style="display:flex;">
     <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" routerLink="/Class">Class</a>
-        <a class="nav-item nav-link" routerLink="/BCA">BCA</a>
-        <a class="nav-item nav-link" routerLink="/CA1-Inject">CA1-Inject</a>
-        <a class="nav-item nav-link" routerLink="/CA1-Temp1">CA1-T1</a>
-        <a class="nav-item nav-link" routerLink="/CA1-Temp2">CA1-T2</a>
-        <a class="nav-item nav-link" routerLink="/Binding">Binding</a>
-        <a class="nav-item nav-link" routerLink="/Events">Events</a>
-
-
+      <a class="nav-link py-0" routerLink="/">Home</a>
+      <a class="nav-link py-0" routerLink="/Class">Class</a>
+      <a class="nav-link py-0" routerLink="/BCA">BCA</a>
+      <a class="nav-link py-0" routerLink="/Binding">Binding</a>
+      <a class="nav-link py-0" routerLink="/Events">Events</a>
 
     </div>
-</nav>
-
-<!-- main content container -->
-    <div class="container-fluid">
-                <router-outlet></router-outlet>
+    <div class="navbar-nav " style="margin-left:3em;">
+      <a class="nav-link py-0" routerLink="/CA1-Inject">CA1-Inject</a>
+      <a class="nav-link py-0" routerLink="/CA1-Temp1">CA1-T1</a>
+      <a class="nav-link py-0" routerLink="/CA1-Temp2">CA1-T2</a>
     </div>
 
+  </nav>
 
-    <marquee direction="left">app.component.html</marquee>
-    <h3>Angular Project by <small>{{title}}</small></h3>
-    <h6>Profile: <i>{{cv}}</i></h6>
-    <!-- this is interpolation -->
 
-    <!--
+
+
+
+  <!-- main content container -->
+  <div class="container-fluid div_router">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <marquee direction="left">app.component.html</marquee>
+  <h3>Angular Project by <small>{{title}}</small></h3>
+  <h6>Profile: <i>{{cv}}</i></h6>
+  <!-- this is interpolation -->
+
+  <!--
     <app-student></app-student>
     <app-bca></app-bca>
     -->

@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//needed for forms
+import { FormsModule } from '@angular/forms';
+
 //import Services by bk ??? needed ?
 import { LpuService } from './lpu.service';
 import { PracticleService } from './practicle.service';
@@ -32,7 +35,8 @@ import { EventsComponent } from './events/events.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   //register Service here by bk ??? needed?
   providers: [LpuService, PracticleService],
