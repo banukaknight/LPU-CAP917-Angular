@@ -1,14 +1,72 @@
 <p>class works!</p>
 
-<input type=text value ="Jamie">
-<br><br>
-<!-- property binding -->
-<input [id]="myid1" type=text [value] =value1>
-<br><br>
-<!-- string interpolation -->
-<input id="{{myid2}}" type=text [value] =value1>
-<br><br>
-<input [disabled]="isDisabled" type=text value ="Sam">
-<br><br>
+<h3>ngIf stuff</h3>
 
-<!-- class binding -->
+<div *ngIf= "arr1.length>0">
+  List has elements
+</div>
+<div *ngIf= "arr1.length==0">
+    List is empty
+</div>
+
+
+<h3>ng-template stuff with template reference use</h3>
+<h3>if else concept</h3>
+
+<div *ngIf= "arr1.length>0; then temp1 else temp2"> testing
+</div>
+<ng-template #temp1>
+  <b>List has some elements</b>
+  </ng-template>
+  <ng-template #temp2>
+    List was empty
+    </ng-template>
+
+
+<h3>if-else concept using [property] binding</h3>
+
+<div [hidden] = "arr1.length==0">
+  List has few elements
+  </div>
+  <div [hidden] = "arr1.length>0">
+    List has no elem
+  </div>
+
+<hr><hr>
+
+<nav class="navbar navbar-expand-sm bg-warning navbar-dark ">
+            <ul class="navbar-nav">
+                <li class="nav-item" [class.active]="viewMode=='angular'">
+                <a class="nav-link" (click)="viewMode='angular'">Ang</a></li>
+                <li class="nav-item" [class.active]="viewMode=='react'">
+                <a class="nav-link" (click)="viewMode='react'">React</a></li>
+            </ul>
+    </nav>
+
+<div [ngSwitch]='viewMode'>
+  <div *ngSwitchCase="'angular'">Angular Component</div>
+  <div *ngSwitchCase="'react'">React Component</div>
+</div>
+<hr><hr>
+
+<div *ngIf="cars.length>0; then carsDisplay; else noDisplay"></div>
+<ng-template #carsDisplay>
+<div *ngFor="let car of cars;index as i" [ngSwitch]="car.color">
+<div *ngSwitchCase="'blue'" class="blue">
+<h3>{{i}}. {{car.name |uppercase}}--{{car.color|titlecase}}</h3>
+</div>
+<div *ngSwitchCase="'maroon'" class="maroon">
+{{i}}. {{car.name |uppercase}}--{{car.color |titlecase}}
+</div>
+<div *ngSwitchCase="'green'" class="green">
+{{i}}. {{car.name|uppercase}}--{{car.color|titlecase}}
+</div>
+</div>
+</ng-template>
+<ng-template #noDisplay>
+<h1> No Data to Display</h1>
+</ng-template>
+
+
+
+<br><br>

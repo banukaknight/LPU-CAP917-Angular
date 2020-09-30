@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 //import Services by bk ??? needed ?
 import { LpuService } from './lpu.service';
 import { PracticleService } from './practicle.service';
+import { Ca1Service } from './ca1.service';
 
 //import sub-components by bk
 import { HomeComponent } from './home/home.component';
@@ -20,6 +21,8 @@ import { Ca1t2Component } from './ca1t2/ca1t2.component';
 import { ClassComponent } from './class/class.component';
 import { BindingComponent } from './binding/binding.component';
 import { EventsComponent } from './events/events.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { EventsComponent } from './events/events.component';
     Ca1t2Component,
     ClassComponent,
     BindingComponent,
-    EventsComponent
+    EventsComponent,
+    TwoWayBindingComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { EventsComponent } from './events/events.component';
     FormsModule
   ],
   //register Service here by bk ??? needed?
-  providers: [LpuService, PracticleService],
+  providers: [LpuService, PracticleService, Ca1Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

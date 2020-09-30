@@ -10,6 +10,8 @@ import { Ca1t2Component } from './ca1t2/ca1t2.component';
 import { ClassComponent } from './class/class.component';
 import { BindingComponent } from './binding/binding.component';
 import { EventsComponent } from './events/events.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
@@ -21,6 +23,8 @@ const routes: Routes = [
 	{ path: 'CA1-Temp2', component: Ca1t2Component },
 	{ path: 'Binding', component: BindingComponent },
 	{ path: 'Events', component: EventsComponent },
+	{ path: 'TwoWayBinding', component: TwoWayBindingComponent },
+	{ path: 'Pipes', component: PipesComponent },
 
 
 

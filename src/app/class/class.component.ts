@@ -7,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassComponent implements OnInit {
 
-/*property binding*/
+arr1 = [2,5,5,3];
 
-	myid1 = "id1";
-	myid2 = "id1";
+viewMode = "react";
 
-	isDisabled=true;
-	value1 = "Harry";
-
+cars=[{"name":"swift","color":"blue",},
+{"name":"toyota","color":"green"},
+{"name":"bmw","color":"maroon",}];
 
 
 

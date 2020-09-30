@@ -1,0 +1,104 @@
+<h1>Transforming Data Using Pipes</h1>
+<p>Use pipes to transform strings, currency amounts, dates, and other data for display.
+  Pipes are simple functions you can use in template expressions to accept an input
+  value and return a transformed value. Pipes are useful because you can use them
+  throughout your application, while only declaring each pipe once. For example, you
+  would use a pipe to show a date as April 15, 1988 rather than the raw string format.</p>
+
+<pre>DatePipe: Formats a date value according to locale rules.
+UpperCasePipe: Transforms text to all upper case.
+LowerCasePipe: Transforms text to all lower case.
+CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.
+DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.
+PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.</pre>
+
+<p>To apply a pipe, use the pipe operator (|) within a template expression as shown in
+  the following code example, along with the name of the pipe, which is date for
+  the built-in DatePipe.</p>
+
+<h3>Pipes demo with keyup.enter event</h3>
+
+Enter Text: <input #input1 (keyup.enter)=keyupevent1(input1.value) type="text"> & press enter<br>
+<h6>Transform text to all upper case: {{ inp1 | uppercase }}</h6>
+<h6>Transform text to all lower case: {{ inp1 | lowercase }}</h6>
+<h6>Transform text to TitleCase: {{ inp1 | titlecase }}</h6><br>
+
+<h3>Pipes demo with two way binding.</h3>
+
+Enter Number: <input [(ngModel)]="inp2" type="text"><br>
+<h6>Raw input: {{ inp2 }}</h6>
+<h6>CurrencyPipe default: {{ inp2 | currency }}</h6>
+<h6>CurrencyPipe Euro: {{ inp2 | currency:'EUR' }}</h6>
+
+<h6>Decimal Number Pipe 2.2-3: {{ inp2 | number:'2.2-3' }}</h6>
+<h6>number format: minIntegerDigits . minFractionDigits - maxFractionDigits</h6><br>
+
+<h6>Percent Pipe: {{ inp2 | percent }}</h6><br>
+
+Enter date: <input [(ngModel)]="inp3" type="date"><br>
+<h6>Date Normal: {{ inp3 }}</h6>
+<h6>DatePipe default: {{ inp3 | date }}</h6>
+<h6>DatePipe MM/dd/yy : {{ inp3 | date:"MM/dd/yy" }}</h6>
+<h6>DatePipe short : {{ inp3 | date:'short' }}</h6>
+<h6>DatePipe shortdate : {{ inp3 | date:'shortDate' }}</h6>
+<h6>DatePipe shortTime : {{ inp3 | date:'shortTime' }}</h6>
+<h6>DatePipe mediumTime: {{ inp3 | date:'mediumTime' }}</h6>
+<h6>Chaining pipes (date & upperc): {{ inp3 | date | uppercase }}</h6><br>
+
+<h6>Value4 normal: {{val4}}</h6>
+<h6>Value4 slice:1:5 : {{val4 | slice:1:5}}</h6><br>
+
+<pre>Pass an onject normal: {{artists_arr}}</pre>
+<pre>Pass an onject with Json pipe:
+   {{artists_arr | json}}</pre>
+
+<br>
+<pre>
+  AsyncPipe
+  Unwraps a value from an asynchronous primitive.
+
+  CurrencyPipe
+  Transforms a number to a currency string, formatted according to locale rules
+  that determine group sizing and separator, decimal-point character, and other
+  locale-specific configurations.
+
+  DatePipe
+  Formats a date value according to locale rules.
+
+  DecimalPipe
+  Transforms a number into a string, formatted according to locale rules that
+  determine group sizing and separator, decimal-point character, and other
+  locale-specific configurations.
+
+  I18nPluralPipe
+  Maps a value to a string that pluralizes the value according to locale rules.
+
+  I18nSelectPipe
+  Generic selector that displays the string that matches the current value.
+
+  JsonPipe
+  Converts a value into its JSON-format representation. Useful for debugging.
+
+  KeyValuePipe
+  Transforms Object or Map into an array of key value pairs.
+
+  LowerCasePipe
+  Transforms text to all lower case.
+
+  PercentPipe
+  Transforms a number to a percentage string, formatted according to locale rules
+  that determine group sizing and separator, decimal-point character, and other
+  locale-specific configurations.
+
+  SlicePipe
+  Creates a new Array or String containing a subset (slice) of the elements.
+
+  TitleCasePipe
+  Transforms text to title case. Capitalizes the first letter of each word and
+  transforms the rest of the word to lower case. Words are delimited by any whitespace
+  character, such as a space, tab, or line-feed character.
+
+  UpperCasePipe
+  Transforms text to all upper case.
+</pre>
+<br><br><br><br><br><br>

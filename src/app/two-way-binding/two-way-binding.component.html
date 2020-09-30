@@ -1,0 +1,21 @@
+<h1> Two Way binding</h1>
+
+<p>Two-way binding gives your app a way to share data between a component
+  class and its template.</p>
+  <pre>Two-way binding does two things:
+
+Sets a specific element property.
+Listens for an element change event.
+Angular offers a special two-way data binding syntax for this purpose, [()].
+The [()] syntax combines the brackets of property binding, [],
+with the parentheses of event binding, ().
+[( )] = BANANA IN A BOX</pre>
+
+
+<h5> Two way binding shows: {{val1}} </h5>
+<input [(ngModel)]="val1" type="text"><br><br><br>
+
+
+Two way bind <input [(ngModel)]="name1" type="text">
+<h2>Name 1 was: {{name1}}</h2>
+<h2>Name 2 not work: {{name2}}</h2>

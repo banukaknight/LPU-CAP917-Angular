@@ -1,5 +1,41 @@
 <div id="div_main">
 
-  <p>events works!</p>
+<h1> Event Handling</h1>
 
+<hr>
+<button (click)=clicked1st($event)>Pass Event name</button>
+<h5>Event Name of (click): {{event1}}</h5>
+
+<hr>
+<input #inp2 type="text">#inp2 - Template referencing
+<button (click)=clicked2nd(inp2.value)>Pass form value</button>
+<h5>Passed Value in uppercase is: {{val2 | uppercase}}</h5>
+
+<hr>
+<button (click)=clicked3rd(inp2.value)>Alert window</button>
+Get value from previous form box & generate alert window.
+
+<hr>
+<button (click)=clicked4th(inp2.value)>Log input</button>
+Get value from previous form box & log the value.
+
+<hr>
+<input #inp5 (keyup.enter)=keyup1(inp5.value) type="text" > Enter val & press enter
+<h5>Entered value by (keyup.enter): {{val5}}</h5>
+
+<hr>
+<input type="text" #inp6 (keyup.enter)=keyup2([(inp6.value),($event)]) >
+Enter val & press enter. pass multiple values
+<h5>Entered value by (keyup.enter): {{val6}}</h5>
+<h5>Event was: {{val6event}}</h5>
+
+
+<hr><hr>
+<input #num1 type="text">num1<br>
+<input #num2 type="text">num2<br>
+<button (click)=f_add([num1.value,num2.value])>Add</button>
+Sum = {{sum}}
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
