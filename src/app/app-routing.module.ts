@@ -12,6 +12,8 @@ import { BindingComponent } from './binding/binding.component';
 import { EventsComponent } from './events/events.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { Form1Component } from './form1/form1.component';
+import { Form2validateComponent } from './form2validate/form2validate.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
@@ -25,6 +27,8 @@ const routes: Routes = [
 	{ path: 'Events', component: EventsComponent },
 	{ path: 'TwoWayBinding', component: TwoWayBindingComponent },
 	{ path: 'Pipes', component: PipesComponent },
+	{ path: 'Form1', component: Form1Component },
+	{ path: 'Form2', component: Form2validateComponent },
 
 
 

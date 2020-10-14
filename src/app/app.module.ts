@@ -23,6 +23,8 @@ import { BindingComponent } from './binding/binding.component';
 import { EventsComponent } from './events/events.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { Form1Component } from './form1/form1.component';
+import { Form2validateComponent } from './form2validate/form2validate.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { PipesComponent } from './pipes/pipes.component';
     BindingComponent,
     EventsComponent,
     TwoWayBindingComponent,
-    PipesComponent
+    PipesComponent,
+    Form1Component,
+    Form2validateComponent
   ],
   imports: [
     BrowserModule,
