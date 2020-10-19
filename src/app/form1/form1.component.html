@@ -1,69 +1,61 @@
-<p>form1 works!</p>
+<p>form1-validate works!</p>
 
+<div class="container">
+  <h3>Forms w/ validation + bootstrap + ngModel - two way binding with class-object</h3>
+  <h5>FOrm Json- {{userForm.value|json}}</h5>
+  <h6>class Obj- {{myObj1|json}}</h6> <hr>
 
-<h5>{{userForm.value|json}}</h5>
+  <div class='form-container mb-5'>
+    <h3>Angular Student Form Validation</h3>
+    <form #userForm='ngForm'>
 
-<div class='form-container mb-5'>
-  <h3>Angular Enrolment forms</h3>
-  <form #userForm='ngForm'>
-
-    <div class="form-group w-50">
-      <label for="">Name</label>
-      <input type="text" class="form-control form-control-sm" name="name" ngModel>
-    </div>
-
-    <div ngModelGroup="adress">
       <div class="form-group w-50">
-        <label for="">Street</label>
-        <input type="text" class="form-control form-control-sm" name="street" ngModel>
+        <label for="">Student Name</label>
+        <input required minlength='5' type="text" class="form-control form-control-sm" name="fname" #TRname=ngModel [(ngModel)]="myObj1.sname">
+        <div class="alert alert-danger" *ngIf="!TRname.valid && TRname.touched">
+          <span *ngIf="TRname.errors.required">Name is required</span>
+          <span *ngIf="TRname.errors.minlength">Min 5 char required</span>
+          </div>
       </div>
 
-      <div class="form-group w-25">
-        <label for="">City</label>
-        <input type="text" class="form-control" name="City" ngModel>
-      </div>
-
-      <div class="form-group w-25">
-        <label for="">state</label>
-        <input type="text" class="form-control" name="state" ngModel>
-      </div>
-    </div>
-
-    <div class="form-group w-25">
-      <label for="">Telephone</label>
-      <input type="number" class="form-control" name="telephone" ngModel>
-    </div>
-
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="gender" value="male" ngModel>
-      <label class="form-check-label" for="inlineRadio1">Male</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="gender" value="female" ngModel>
-      <label class="form-check-label" for="inlineRadio2">Female</label>
-    </div>
-
-
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agree" ngModel>
-          <label class="form-check-label" for="exampleCheck1">Agree to Terms</label>
+      <div class="form-group w-50">
+        <label for="">Student ID</label>
+        <input required pattern='[0-9]{4,}'  type="text" class="form-control form-control-sm" name="fid" #TRid=ngModel [(ngModel)]="myObj1.sid">
+        <div class="alert alert-danger" *ngIf="!TRid.valid && TRid.touched">
+          <div *ngIf="TRid.errors.required">ID is required</div>
+          <div *ngIf="TRid.errors.pattern">4 digits req</div>
+          </div>
         </div>
 
+      <div class="form-group w-50">
+        <label for="">Student City</label>
+        <input required type="text" class="form-control" name="fcity" #TRcity=ngModel [(ngModel)]="myObj1.scity">
+        <div class="alert alert-danger" *ngIf="!TRcity.valid && TRcity.touched && TRcity.errors.required">City required</div>
+      </div>
+
+      <div class="form-group w-50">
+        <label for="">Student Phone</label>
+        <input type="text" class="form-control" name="fphone" [(ngModel)]="myObj1.sphone">
+      </div>
+
+      <label for="">Nationality:.. </label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="fnation" value="Indian" [(ngModel)]="myObj1.snation">
+        <label class="form-check-label" for="">Indian</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="fnation" value="International" [(ngModel)]="myObj1.snation">
+        <label class="form-check-label" for="">International</label>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="fupdate" [(ngModel)]="myObj1.supdates">
+        <label class="form-check-label" for="">Get Updates</label>
+      </div>
+
+      <input [disabled]="userForm.form.invalid"  class="btn btn-primary form-group w-50" type="submit" value="Submit Form">
+
+    </form>
 
 
-  </form>
-</div>
-
-
-
-<h6>ngForm - Creates a top-level FormGroup instance and binds it to a form to track aggregate form value and validation status.</h6>
-<p>As soon as you import the FormsModule, this directive becomes active by default on all ..form.. tags. You don't need to add a special selector.
-<br>You optionally export the directive into a local template variable using ngForm as the key (ex: #myForm="ngForm"). This is optional, but useful. Many properties from the underlying FormGroup instance are duplicated on the directive itself, so a reference to it gives you access to the aggregate value and validity status of the form, as well as user interaction properties like dirty and touched.
-<br>To register child controls with the form, use NgModel with a name attribute. You may use NgModelGroup to create sub-groups within the form.
-<br>If necessary, listen to the directive's ngSubmit event to be notified when the user has triggered a form submission. The ngSubmit event emits the original form submission event.</p>
-
-<h6>ngModel - Creates a FormControl instance from a domain model and binds it to a form control element</h6>
-<p>The FormControl instance tracks the value, user interaction, and validation status of the control and keeps the view synced with the model. If used within a parent form, the directive also registers itself with the form as a child control.
-<br>This directive is used by itself or as part of a larger form. Use the ngModel selector to activate it.
-<br>It accepts a domain model as an optional Input. If you have a one-way binding to ngModel with [] syntax, changing the value of the domain model in the component class sets the value in the view. If you have a two-way binding with [()] syntax (also known as 'banana-box syntax'), the value in the UI always syncs back to the domain model in your class.
-<br>To inspect the properties of the associated FormControl (like validity state), export the directive into a local template variable using ngModel as the key (ex: #myVar="ngModel"). You then access the control using the directive's control property, but most properties used (like valid and dirty) fall through to the control anyway for direct access. See a full list of properties directly available in AbstractControlDirective.</p>
+  </div>

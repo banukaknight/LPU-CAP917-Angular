@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 //needed for forms
 import { FormsModule } from '@angular/forms';
+//needed for observable
+import { HttpClientModule } from '@angular/common/http';
 
 //import Services by bk ??? needed ?
 import { LpuService } from './lpu.service';
@@ -45,7 +47,8 @@ import { Form2validateComponent } from './form2validate/form2validate.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   //register Service here by bk ??? needed?
   providers: [LpuService, PracticleService, Ca1Service],

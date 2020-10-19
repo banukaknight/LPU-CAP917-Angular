@@ -4,39 +4,75 @@
 
   <!-- Navigation bar to browse sub-pages -->
 
-
-
-
-
-  <nav class="navbar nav-pills navbar-expand navbar-dark bg-dark" >
-    <div class="navbar-nav">
-      <a class="nav-link py-0" routerLink="/">Home</a>
+  <nav class="navbar nav-pills navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand disabled"><img src="./assets/logos/bkbracket.png" style="max-height: 1.5em;  width: auto;"></a>
+  <!-- first set of links -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText1" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText1">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link py-0" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
       <a class="nav-link py-0" routerLink="/Class">Class</a>
+      </li>
+      <li class="nav-item">
       <a class="nav-link py-0" routerLink="/BCA">BCA</a>
-      <a class="nav-link py-0" routerLink="/Binding">Binding</a>
-      <a class="nav-link py-0" routerLink="/Events">Events</a>
-      <a class="nav-link py-0" routerLink="/TwoWayBinding">Two-way Binding</a>
-      <a class="nav-link py-0" routerLink="/Pipes">Pipes</a>
-      <a class="nav-link py-0" routerLink="/Form1">Form1</a>
-      <a class="nav-link py-0" routerLink="/Form2">Form2</a>
+      </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="bindingdd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Binding+
+        </a>
+        <div class="dropdown-menu" aria-labelledby="bindingdd">
+          <a class="nav-link py-0" routerLink="/Binding">Binding</a>
+          <a class="nav-link py-0" routerLink="/Events">Events</a>
+          <a class="nav-link py-0" routerLink="/TwoWayBinding">Two-way Binding</a>
+          <a class="nav-link py-0" routerLink="/Pipes">Pipes</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" id="formsdd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Forms+
+        </a>
+        <div class="dropdown-menu" aria-labelledby="formsdd">
+          <a class="nav-link py-0" routerLink="/Form1">Form1</a>
+          <a class="nav-link py-0" routerLink="/Form2">Form2</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+<!-- second set in nav -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText2" aria-controls="navbarText2" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText2">
+    <ul class="navbar-nav ml-auto ">
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" id="ca1dd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CA1
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ca1dd">
+          <a class="nav-link py-0" routerLink="/CA1-Inject">CA1-Inject</a>
+          <a class="nav-link py-0" routerLink="/CA1-Temp1">CA1-T1</a>
+          <a class="nav-link py-0" routerLink="/CA1-Temp2">CA1-T2</a>
+        </div>
+      </li>
+      </ul>
     </div>
 
-
-    <div class="navbar-nav " style="margin-left:3em;">
-      <a class="nav-link py-0" routerLink="/CA1-Inject">CA1-Inject</a>
-      <a class="nav-link py-0" routerLink="/CA1-Temp1">CA1-T1</a>
-      <a class="nav-link py-0" routerLink="/CA1-Temp2">CA1-T2</a>
-    </div>
-
-  </nav>
+</nav>
 
 
   <!-- main content container -->
   <div class="container-fluid div_router">
     <router-outlet></router-outlet>
   </div>
-
 
   <marquee direction="left">app.component.html</marquee>
   <h3>Angular Project by <small>{{title}}</small></h3>

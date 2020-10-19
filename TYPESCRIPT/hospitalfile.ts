@@ -16,6 +16,9 @@ export class hospital{
 	}//end detail func
 }//end class
 
+
+
+
 const first = new hospital(1, "Aparn", "sharma", 34234234); //creating an obj
 var second = new hospital(2, "John", "Wats", 54545454);
 

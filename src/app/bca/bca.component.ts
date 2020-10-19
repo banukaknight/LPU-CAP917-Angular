@@ -50,9 +50,8 @@ export class BcaComponent implements OnInit {
   constructor(
     //added after service
     private prac_srv:PracticleService,
-    //import 2nd service file
+    //import 2nd service file & for Observable
     private lpu_srv:LpuService
-
   ) { }
 
   ngOnInit(): void {
@@ -60,7 +59,10 @@ export class BcaComponent implements OnInit {
     this.student_list=this.prac_srv.getStudents(); //ca1-g1
     this.book_array=this.prac_srv.getBooksList(); //ca1-g1
     //from 2nd service file
-    this.artists_list=this.lpu_srv.getArtists();
+    //this.artists_list=this.lpu_srv.getArtists();
+    //from observable
+    this.lpu_srv.getArtists()
+    .subscribe(data=>this.artists_list = data);
   }
 
 }

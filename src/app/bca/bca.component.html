@@ -73,13 +73,16 @@ div with ngFor..
 
 <br />
 List stuff components.ts:
+<pre>{{employees | json}}</pre>
+
   <ul>
   <li *ngFor="let emp of employees">
     {{emp.id}} - {{emp.name}} - {{emp.age}}</li>
   </ul>
 
   <br />
-  List stuff 2nd service file:
+  List stuff 2nd service file: from observable
+  <pre>{{artists_list | json}}</pre>
     <ul>
     <li *ngFor="let art of artists_list">
       {{art.id}} --- {{art.name}} --- {{art.age}}</li>
