@@ -1,0 +1,124 @@
+<div class="p-4 container-responsive">
+
+  <h1>Structural directives</h1>
+  <p>Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements.
+    As with other directives, you apply a structural directive to a host element. The directive then does whatever it's supposed to do with that host element and its descendants.
+    Structural directives are easy to recognize. An asterisk (*) precedes the directive attribute name as in this example.</p>
+
+  <h3>*ngIf , *ngFor , *ngSwitch</h3>
+  <p>Throughout this guide, you'll see a directive spelled in both UpperCamelCase and lowerCamelCase. Already you've seen NgIf and ngIf. There's a reason. NgIf refers to the directive class; ngIf refers to the directive's attribute name.
+
+    A directive class is spelled in UpperCamelCase (NgIf). A directive's attribute name is spelled in lowerCamelCase (ngIf).</p>
+  <hr>
+
+  <h4>*ngFor</h4>
+  <!-- from: https://malcoded.com/posts/angular-ngfor -->
+  <h6>simple ngFor directive</h6>
+  <ul>
+    <li *ngFor="let x of array1">{{x.guid}} <br>
+      {{x.age}} - {{x.name}}
+    </li>
+  </ul>
+
+  <h6>ngFor with index access:</h6>
+  <ul>
+    <li *ngFor="let x of array1; let i = index">
+      Indx: {{i}} - {{x.guid}} <br>
+      {{x.age}} - {{x.name}}
+    </li>
+  </ul>
+
+  <h6>get first and last element of list.</h6>
+  <p>The value of the variable is boolean, depending if the current element is first or last.</p>
+  <ul>
+    <li *ngFor="let element of array1; let first = first; let last = last" [ngClass]="{ first: first, last: last }">
+      First ? {{first}} , Last ? {{last}}
+    </li>
+  </ul>
+
+  <h6>Check for index of element ot be odd or even</h6>
+  <p>useful in tables using striped patters for css styling</p>
+  <ul>
+    <li *ngFor="let element of array1; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
+      Odd? {{odd}} , Even? {{even}}
+    </li>
+  </ul>
+
+  <hr>
+  <p>practiced in class</p>
+
+    <h3>ngIf stuff</h3>
+
+    <div *ngIf="arr1.length>0">
+      List has elements
+    </div>
+    <div *ngIf="arr1.length==0">
+      List is empty
+    </div>
+
+
+    <h3>ng-template stuff with template reference use</h3>
+    <h3>if else concept</h3>
+
+    <div *ngIf="arr1.length>0; then temp1 else temp2"> testing
+    </div>
+    <ng-template #temp1>
+      <b>List has some elements</b>
+    </ng-template>
+    <ng-template #temp2>
+      List was empty
+    </ng-template>
+
+
+    <h3>if-else concept using [property] binding</h3>
+
+    <div [hidden]="arr1.length==0">
+      List has few elements
+    </div>
+    <div [hidden]="arr1.length>0">
+      List has no elem
+    </div>
+
+    <hr>
+    <hr>
+
+    <nav class="navbar navbar-expand-sm bg-warning navbar-dark ">
+      <ul class="navbar-nav">
+        <li class="nav-item" [class.active]="viewMode=='angular'">
+          <a class="nav-link" (click)="viewMode='angular'">Ang</a>
+        </li>
+        <li class="nav-item" [class.active]="viewMode=='react'">
+          <a class="nav-link" (click)="viewMode='react'">React</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div [ngSwitch]='viewMode'>
+      <div *ngSwitchCase="'angular'">Angular Component</div>
+      <div *ngSwitchCase="'react'">React Component</div>
+    </div>
+    <hr>
+    <hr>
+
+    <div *ngIf="cars.length>0; then carsDisplay; else noDisplay"></div>
+    <ng-template #carsDisplay>
+      <div *ngFor="let car of cars;index as i" [ngSwitch]="car.color">
+        <div *ngSwitchCase="'blue'" class="blue">
+          <h3>{{i}}. {{car.name |uppercase}}--{{car.color|titlecase}}</h3>
+        </div>
+        <div *ngSwitchCase="'maroon'" class="maroon">
+          {{i}}. {{car.name |uppercase}}--{{car.color |titlecase}}
+        </div>
+        <div *ngSwitchCase="'green'" class="green">
+          {{i}}. {{car.name|uppercase}}--{{car.color|titlecase}}
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #noDisplay>
+      <h1> No Data to Display</h1>
+    </ng-template>
+
+    <hr>
+
+    <marquee direction="right">directives.component.html</marquee>
+  </div>

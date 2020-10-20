@@ -9,12 +9,12 @@ import { FormsModule } from '@angular/forms';
 //needed for observable
 import { HttpClientModule } from '@angular/common/http';
 
-//import Services by bk ??? needed ?
+//import Services by bk ??? needed ? - user defined
 import { LpuService } from './lpu.service';
 import { PracticleService } from './practicle.service';
 import { Ca1Service } from './ca1.service';
 
-//import sub-components by bk
+//import sub-components by bk - user defined
 import { HomeComponent } from './home/home.component';
 import { BcaComponent } from './bca/bca.component';
 import { Ca1Component } from './ca1/ca1.component';
@@ -27,6 +27,10 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { PipesComponent } from './pipes/pipes.component';
 import { Form1Component } from './form1/form1.component';
 import { Form2validateComponent } from './form2validate/form2validate.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { BootsComponent } from './boots/boots.component';
+import { InjectsComponent } from './injects/injects.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { Form2validateComponent } from './form2validate/form2validate.component'
     TwoWayBindingComponent,
     PipesComponent,
     Form1Component,
-    Form2validateComponent
+    Form2validateComponent,
+    DirectivesComponent,
+    BootsComponent,
+    InjectsComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,

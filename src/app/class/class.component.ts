@@ -7,13 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassComponent implements OnInit {
 
-arr1 = [2,5,5,3];
 
-viewMode = "react";
 
-cars=[{"name":"swift","color":"blue",},
-{"name":"toyota","color":"green"},
-{"name":"bmw","color":"maroon",}];
+
 
 
 

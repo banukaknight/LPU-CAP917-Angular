@@ -14,6 +14,10 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { PipesComponent } from './pipes/pipes.component';
 import { Form1Component } from './form1/form1.component';
 import { Form2validateComponent } from './form2validate/form2validate.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { BootsComponent } from './boots/boots.component';
+import { InjectsComponent } from './injects/injects.component';
+import { ObservableComponent } from './observable/observable.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
@@ -27,9 +31,12 @@ const routes: Routes = [
 	{ path: 'Events', component: EventsComponent },
 	{ path: 'TwoWayBinding', component: TwoWayBindingComponent },
 	{ path: 'Pipes', component: PipesComponent },
-	{ path: 'Form1', component: Form1Component },
-	{ path: 'Form2', component: Form2validateComponent },
-
+	{ path: 'Form1Obj', component: Form1Component },
+	{ path: 'Form2Validate', component: Form2validateComponent },
+	{ path: 'Directives', component: DirectivesComponent },
+	{ path: 'Bootstrap', component: BootsComponent },
+	{ path: 'Injects', component: InjectsComponent },
+	{ path: 'Observable', component: ObservableComponent },
 
 
   // otherwise redirect to home

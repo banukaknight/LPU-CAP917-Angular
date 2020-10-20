@@ -9,23 +9,17 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LpuService {
-  // //using normal service
-  // artists_arr = [ {"id":"111", "name":"James", "age":30},
-  // {"id":"222", "name":"Dawn", "age":90},
-  // {"id":"333", "name":"Sam", "age":60}
-  // ];
-  //
-  // getArtists(){
-  //   return this.artists_arr;
-  // }
+  //using normal service
+  artists_arr = [ {"id":"111", "name":"James", "age":30},
+  {"id":"222", "name":"Dawn", "age":90},
+  {"id":"333", "name":"Sam", "age":60}
+  ];
 
-  // //using observable
-  private _url='/assets/data/artist_json.json';
+  getArtists(){
+    return this.artists_arr;
+  }
 
-  constructor(private http: HttpClient) { }
 
-  getArtists():Observable<IEmpclass[]>
-    {
-      return this.http.get<IEmpclass[]>(this._url);
-    }
+  constructor() { }
+
 }
