@@ -1,0 +1,842 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:normal;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB>
+
+<div class=WordSection1 style="background-color:white;">
+
+<h1>Observable, httpclientmodule &amp; rxjs</h1>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%'>FOLLOW
+STEPS TOP TO BOTTOM. -    is TAB SPACE </span></i></p>
+
+<p class=MsoNormal>Create a class with name post:<br>
+<span style='background:yellow'>ng g class post</span></p>
+
+<p class=MsoNormal>Create a class w name comment:<br>
+<span style='background:yellow'>ng g class comment</span></p>
+
+<p class=MsoNormal>Create a service with name post:<br>
+<span style='background:yellow'>ng g s post</span></p>
+
+<p class=MsoNormal>Create a component with name post:<br>
+<span style='background:yellow'>ng g c post</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=301 valign=top style='width:225.4pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>In – comments.ts – write:</p>
+  </td>
+  <td width=301 valign=top style='width:225.4pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>In – post.ts </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=301 valign=top style='width:225.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>export</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue;background:yellow'>class</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Comment </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>{</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  userId</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>number</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  id</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>number</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  title</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>string</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  body</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>string</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b></p>
+  </td>
+  <td width=301 valign=top style='width:225.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>export</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue;background:yellow'>class</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Post </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>{</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  userId</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>number</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  id</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>number</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  title</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>string</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  body</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>string</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>In post.service.ts add:</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> Injectable </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> from </span><span style='font-size:
+  10.0pt;font-family:"Courier New";color:gray'>'@angular/core'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:green'>//imports by bk</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> HttpClient </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>'@angular/common/http'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Observable </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>'rxjs'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Comment </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>'./comment'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:green'> </span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Post </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>'./post'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>@Injectable</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>({</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  providedIn</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:gray'>'root'</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>})</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>export</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>class</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> PostService </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>{</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#804000'>constructor</span></b><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>(</span></b><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:blue;background:yellow'>private</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> http</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> HttpClient</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>)</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>}</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  <span style='background:yellow'>getcomment</span></span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>():</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>Observable</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>&lt;</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'>any</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>&gt;{</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>    </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:blue;background:yellow'>return</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>this</span></b><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>.</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>http</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>.</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'>get</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>(</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>'https://jsonplaceholder.typicode.com/posts'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>);</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>  </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>};</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>}</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>In app.module.ts add:</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> BrowserModule </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>}</span></b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:black'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray'>'@angular/platform-browser'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> NgModule </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> from </span><span style='font-size:
+  10.0pt;font-family:"Courier New";color:gray'>'@angular/core'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> AppRoutingModule </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>}</span></b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:black'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray'>'./app-routing.module'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> AppComponent </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>}</span></b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:black'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray'>'./app.component'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> PostComponent </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>}</span></b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:black'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray'>'./post/post.component'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> HttpClientModule </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy;background:yellow'>}</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> from </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:gray;background:yellow'>'@angular/common/http'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> PostService </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy;background:yellow'>}</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> from </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:gray;background:yellow'>&quot;./post.service&quot;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>@NgModule</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>({</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  declarations</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>:</span></b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:black'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>[</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    AppComponent</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>,</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    <span style='background:yellow'>PostComponent</span></span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>],</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  imports</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:navy'>[</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    BrowserModule</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>,</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    AppRoutingModule</span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>,</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    <span style='background:yellow'>HttpClientModule</span></span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>],</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  providers</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:navy'>[</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>PostService</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>],</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  bootstrap</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:navy'>[</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>AppComponent</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>]</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>})</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>export</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>class</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> AppModule </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>{</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:navy'>}</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>In post.component.ts add:</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>import</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>{</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> Component</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>,</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> OnInit </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>}</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray'>'@angular/core'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:green'>//imports by bk for Observable</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> PostService </span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy;background:yellow'>}</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> from </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:gray;background:yellow'>&quot;../post.service&quot;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Post </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>&quot;../post&quot;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>import</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Comment </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>}</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'> from </span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray;background:yellow'>&quot;../comment&quot;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>@Component</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>({</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  selector</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:gray'>'app-post'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>,</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  templateUrl</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:gray'>'./post.component.html'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>,</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  styleUrls</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:navy'>[</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:gray'>'./post.component.css'</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>]</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>})</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>export</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>class</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> PostComponent </span><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:blue'>implements</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> OnInit </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>{</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  <span style='background:yellow'>lstcomments</span></span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>:</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> Comment</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>[];</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#804000'>constructor</span></b><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy'>(</span></b><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:blue;background:yellow'>private</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> _p</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>:</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'>PostService</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>)</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>{</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>}</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  ngOnInit</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:navy'>():</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black'> </span><b><span style='font-size:
+  10.0pt;font-family:"Courier New";color:blue'>void</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'> </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy'>{</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>this</span></b><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>.</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>_p</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>.</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'>getcomment</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>().</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>subscribe </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>(</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'>data </span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>=&gt;</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>this</span></b><b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:navy;background:yellow'>.</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>lstcomments</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy;background:yellow'>=</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:black;background:yellow'>data</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:navy;background:yellow'>);</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>}</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:navy'>}</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>In post.component.html add:</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;p&gt;</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:black'>post works!</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:blue'>&lt;/p&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;h3&gt;</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:black'>http-observable from web</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>&lt;/h3&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;div</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:red'>style</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>=</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#8000FF'>&quot;height:400px; width:90vw; overflow-y:auto; margin:
+  auto;&quot;</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;table</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:red'>class</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>=</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#8000FF'>&quot;table table-dark table-sm &quot;</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;tr&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;th&gt;</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:black'>UserId</span></b><span style='font-size:10.0pt;
+  font-family:"Courier New";color:blue'>&lt;/th&gt;&lt;th&gt;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>ID</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>&lt;/th&gt;&lt;th&gt;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>Title</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>&lt;/th&gt;&lt;th&gt;</span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>Body</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>&lt;/th&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;/tr&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;<span style='background:yellow'>tr</span></span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'> *ngFor = </span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#8000FF;background:yellow'>&quot;let c of lstcomments</span></b><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:#8000FF'>&quot;</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;td<span style='background:yellow'>&gt;</span></span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>{{c.userId}}</span></b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:blue;background:yellow'>&lt;/</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>td&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;td&gt;</span><b><span style='font-size:10.0pt;font-family:
+  "Courier New";color:black;background:yellow'>{{c.id}}</span></b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue;background:yellow'>&lt;/</span><span
+  style='font-size:10.0pt;font-family:"Courier New";color:blue'>td&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;td<span style='background:yellow'>&gt;</span></span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>{{c.title}}</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>&lt;/</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:blue'>td&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>    </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;td<span style='background:yellow'>&gt;</span></span><b><span
+  style='font-size:10.0pt;font-family:"Courier New";color:black;background:
+  yellow'>{{c.body}}</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue;background:yellow'>&lt;/</span><span style='font-size:10.0pt;
+  font-family:"Courier New";color:blue'>td&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>  </span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;/tr&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;/table&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;/div&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>&nbsp;</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;div</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'> </span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:red'>style</span><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black'>=</span><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:#8000FF'>&quot;height:400px; width:90vw; overflow-y:auto; margin:
+  auto;&quot;</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><b><span style='font-size:10.0pt;font-family:"Courier New";
+  color:black;background:yellow'>{{lstcomments|json}}</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;background:white'><span style='font-size:10.0pt;font-family:"Courier New";
+  color:blue'>&lt;/div&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
