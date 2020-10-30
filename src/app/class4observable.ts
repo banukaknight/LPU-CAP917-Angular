@@ -1,8 +1,14 @@
-// export class Class4observable {
-// }
+// these can be either class or interface. prefer interface.
 
-export interface Intf4observable {
+export class Class4observable {
+  id: number;
+  name: string;
+  age: number;
+}
+
+export interface Intf4observable2 {
   id: number,
   name: string,
-  age: number
+  username: string,
+  email: string
 }

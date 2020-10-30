@@ -1,0 +1,32 @@
+<div class="p-4 container-responsive">
+
+  <h2>F.r.i.e.n.d.s Quotes <br> Can you Guess who said it?</h2>
+  <h6>Using API: <a href="https://friends-quotes-api.herokuapp.com/">friends-quotes-api.herokuapp.com/</a></h6>
+
+  <div class="row">
+    <div class="card col-sm-6 col-md-4 col-lg-4" *ngFor="let q of friendsquotes">
+
+      <div class="card-body">
+        <h5 class="card-title" [hidden]=!q.hide> {{q.character}} </h5>
+        <p class="card-text"> {{q.quote}} </p>
+
+        <div class="btn-group d-flex" role="group">
+          <button *ngFor="let f of ['Phoebe','Ross','Joey','Monica','Rachel','Chandler']"
+          class="btn btn-sm btn-primary btn-outline-light p-1 " (click)="checkfriend(q,f)">
+          {{f}}
+          </button>
+        </div>
+
+        <p class="msg" [class]=q.cls>{{q.msg}}</p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <marquee direction="right">prac2.component.html</marquee>
+</div>

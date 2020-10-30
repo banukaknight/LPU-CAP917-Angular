@@ -1,4 +1,4 @@
-export class Class1 {
+export class Class4form1 {
 
   constructor(
     public sname: string,

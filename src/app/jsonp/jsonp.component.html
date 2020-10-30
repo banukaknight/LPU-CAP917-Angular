@@ -1,0 +1,122 @@
+<div class="p-3">
+<h1>Communicating with backend services using HTTP</h1>
+<h3>JSONPlaceholder, HttpClient, Observable, rxjs</h3>
+<p>JSONPlaceholder is an online REST service that you can use whenever
+  you need some fake data. Run this code in a console or from anywhere
+  that CORS and JSONP is supported. It's like an image placeholder but
+  for web developers and is used for tutorials, faking a server, sharing
+  code examples and more. <a href="https://jsonplaceholder.typicode.com/guide/">
+    jsonplaceholder.typicode.com/guide/</a></p>
+
+
+<h3>Get Method - Fetch data from server with GET</h3>
+<p>The JsonpComponent injects the Serv4jsonpService and calls the fget() service method.<br>
+Because the service method returns an Observable of configuration data, the component
+subscribes to the method's return value. The subscription callback performs minimal
+post-processing. It copies the data fields into the component's config object,
+which is data-bound in the component template for display.</p>
+
+<div style="height:400px; width:90vw; overflow-y:auto; margin: auto;">
+<table class="table table-dark table-sm ">
+  <tr>    <th>UserId</th><th>ID</th><th>Title</th><th>Body</th>  </tr>
+
+  <tr *ngFor = "let c of lstpost">
+    <td>{{c.userId}}</td>
+    <td>{{c.id}}</td>
+    <td>{{c.title}}</td>
+    <td>{{c.body}}</td>
+  </tr>
+</table>
+</div>
+
+<h5>lstpost - plain json</h5>
+<div style="height:300px; width:90vw; overflow-y:auto; margin: auto;">
+{{lstpost|json}}
+</div>
+
+
+<h3>Post Method - Creating a resource with POST</h3>
+<p>Apps often send data to a server with a POST request when submitting a form.
+  In the following example, the Serv4jsonpService makes an HTTP POST request
+  when adding a data-post to the database.</p>
+
+<p>id: {{objPost?.id}}</p>
+<p>userId: {{objPost?.userId}}</p>
+<p>title: {{objPost?.title}}</p>
+<p>body: {{objPost?.body}}</p>
+
+
+<h3>Put Method - Updating a resource with PUT</h3>
+<p>An app can send PUT requests using the HTTP client service. The following
+  Serv4jsonpService example, like the POST example, replaces a resource with updated data.</p>
+<p>id: {{objPut?.id}}</p>
+<p>userId: {{objPut?.userId}}</p>
+<p>title: {{objPut?.title}}</p>
+<p>body: {{objPut?.body}}</p>
+
+
+<h3>Patch Method - Updating a resource with PATCH</h3>
+<p>id: {{objPatch?.id}}</p>
+<p>userId: {{objPatch?.userId}}</p>
+<p>title: {{objPatch?.title}}</p>
+<p>body: {{objPatch?.body}}</p>
+
+
+<h3>Delete Method - Deleting a resource</h3>
+<p>This application deletes a hero with the HttpClient.delete method by passing the
+  data-post's id in the request URL. The JsonpComponent initiates the actual DELETE
+  operation by subscribing to the Observable returned by this service method.<br>
+  The component isn't expecting a result from the delete operation, so it subscribes
+  without a callback. Even though you are not using the result, you still have to
+  subscribe. Calling the subscribe() method executes the observable, which is what
+  initiates the DELETE request.</p>
+<p>Message: {{message}}</p>
+
+<hr>
+<h4>Trying other stuff by bk----</h4>
+
+<h3>Filtering resources with GET</h3>
+<p>Basic filtering is supported through query parameters. here only userID:2 data is returned</p>
+<div style="height:400px; width:90vw; overflow-y:auto; margin: auto;">
+<table class="table table-dark table-sm ">
+  <tr>    <th>UserId</th><th>ID</th><th>Title</th><th>Body</th>  </tr>
+
+  <tr *ngFor = "let c of lstpostfilter">
+    <td>{{c.userId}}</td>
+    <td>{{c.id}}</td>
+    <td>{{c.title}}</td>
+    <td>{{c.body}}</td>
+  </tr>
+</table>
+</div>
+
+
+<h3>Listing Nested resources with GET</h3>
+<p>One level of nested route is available.</p>
+<div style="height:400px; width:90vw; overflow-y:auto; margin: auto;">
+<table class="table table-dark table-sm ">
+  <tr>    <th>UserId</th><th>ID</th><th>Title</th><th>Body</th>  </tr>
+
+  <tr *ngFor = "let c of lstpostnested">
+    <td>{{c.userId}}</td>
+    <td>{{c.id}}</td>
+    <td>{{c.title}}</td>
+    <td>{{c.body}}</td>
+  </tr>
+</table>
+</div>
+
+
+<hr>
+<p>All observables returned from HttpClient methods are cold by design. Execution of
+  the HTTP request is deferred, allowing you to extend the observable with additional
+  operations such as tap and catchError before anything actually happens.<br>
+Calling subscribe(...) triggers execution of the observable and causes HttpClient
+to compose and send the HTTP request to the server.</p>
+
+
+
+
+<marquee direction="right">jsonp.component.html</marquee>
+</div>
+<h3>http-observable from web</h3>

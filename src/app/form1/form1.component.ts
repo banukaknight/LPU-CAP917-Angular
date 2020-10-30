@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import class for object creation
-import {Class1} from '../class1';
+import {Class4form1} from '../class4form1';
 
 
 @Component({
@@ -10,7 +10,7 @@ import {Class1} from '../class1';
 })
 export class Form1Component implements OnInit {
 
-  myObj1 = new Class1("Dave Chappel","123456789","Galle","23215324","International",true);
+  myObj1 = new Class4form1("Dave Chappel","123456789","Galle","23215324","International",true);
 
 
   constructor() { }

@@ -18,6 +18,9 @@ import { DirectivesComponent } from './directives/directives.component';
 import { BootsComponent } from './boots/boots.component';
 import { InjectsComponent } from './injects/injects.component';
 import { ObservableComponent } from './observable/observable.component';
+import { JsonpComponent } from './jsonp/jsonp.component';
+import { Prac1Component } from './prac/prac1/prac1.component';
+import { Prac2Component } from './prac/prac2/prac2.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
@@ -37,6 +40,9 @@ const routes: Routes = [
 	{ path: 'Bootstrap', component: BootsComponent },
 	{ path: 'Injects', component: InjectsComponent },
 	{ path: 'Observable', component: ObservableComponent },
+	{ path: 'JsonP', component: JsonpComponent },
+	{ path: 'Prac/Prac1', component: Prac1Component },
+	{ path: 'Prac/Prac2', component: Prac2Component },
 
 
   // otherwise redirect to home

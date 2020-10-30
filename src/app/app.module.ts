@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LpuService } from './lpu.service';
 import { PracticleService } from './practicle.service';
 import { Ca1Service } from './ca1.service';
+import { Serv4observableService } from './serv4observable.service';
+import { Serv4jsonpService } from './serv4jsonp.service';
+import { Serv4pracService_Friends, Serv4pracService_Jokes } from "./serv4prac.service";
+
 
 //import sub-components by bk - user defined
 import { HomeComponent } from './home/home.component';
@@ -31,6 +35,9 @@ import { DirectivesComponent } from './directives/directives.component';
 import { BootsComponent } from './boots/boots.component';
 import { InjectsComponent } from './injects/injects.component';
 import { ObservableComponent } from './observable/observable.component';
+import { JsonpComponent } from './jsonp/jsonp.component';
+import { Prac1Component } from './prac/prac1/prac1.component';
+import { Prac2Component } from './prac/prac2/prac2.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +57,10 @@ import { ObservableComponent } from './observable/observable.component';
     DirectivesComponent,
     BootsComponent,
     InjectsComponent,
-    ObservableComponent
+    ObservableComponent,
+    JsonpComponent,
+    Prac1Component,
+    Prac2Component
   ],
   imports: [
     BrowserModule,
@@ -59,7 +69,8 @@ import { ObservableComponent } from './observable/observable.component';
     HttpClientModule
   ],
   //register Service here by bk ??? needed?
-  providers: [LpuService, PracticleService, Ca1Service],
+  providers: [LpuService, PracticleService, Ca1Service, Serv4observableService, Serv4jsonpService,
+  Serv4pracService_Friends, Serv4pracService_Jokes],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

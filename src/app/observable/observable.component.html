@@ -3,6 +3,7 @@
 
 <h6>{{message1}}</h6>
 <hr>
+
 <h4>Locally stored Json file - subscribe using observable</h4>
 <h5>Object dump</h5>
 {{posts}}
@@ -12,15 +13,36 @@
 
 <h5>using ngFor loop to list print</h5>
 <ul>
-  <li *ngFor = "let p of posts">{{this.p.id}} -- {{this.p.name}} -- {{this.p.age}}</li>
+  <li *ngFor = "let p of posts">{{this.p.id}} -- {{this.p.name}} -- {{this.p.age}} </li>
+</ul>
+<hr>
+<h5>using ngFor loop to list print - async pipe that do the subscribe</h5>
+<ul>
+  <li *ngFor = "let p of obs_results | async">{{this.p.id}} -- {{this.p.name}} -- {{this.p.age}} </li>
 </ul>
 
+<h4>Web stored Json file - subscribe using observable</h4>
+<h5>using ngFor loop to list print</h5>
+<ul>
+  <li *ngFor = "let i of jsonfromweb">{{this.i.id}} -- {{this.i.name}} -- {{this.i.username}} -- {{this.i.email}}</li>
+</ul>
+
+<h5>Object dump with json pipe</h5>
+<div class = "overflow200div">
+{{jsonfromweb | json}}
+</div>
 
 <br><br>
 
 <hr>
 
-<pre>
+<div style="width:90vw; margin: auto;">
+   <object data="./assets/screens/observable/ObservableSteps.htm"
+   type="text/html" style="height:400px; width:90vw; overflow:auto; border:5px ridge blue">
+   </object>
+</div>
+
+<pre>++++ Class discussions
   1. http get request from servce
   2. reieve the observable & cast it into an array
   3. subscribe to observable from --list & --details
@@ -45,9 +67,7 @@ import --- interface ..... --- defined by user (Class4observable)
 </pre>
 
 
-<img *ngFor = "let i of [1,2,3,4,5,6,7,8,9]" class="img-fluid" src="./assets/screens/observable/{{i}}.png">
-
-
+<img *ngFor = "let i of [1,2,3,4,5,6,7]" class="img-fluid" src="./assets/screens/observable/{{i}}.png">
 
   <marquee direction="right">observable.component.html</marquee>
 </div>

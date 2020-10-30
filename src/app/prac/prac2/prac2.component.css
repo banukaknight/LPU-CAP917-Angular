@@ -1,0 +1,15 @@
+#rotate{
+  vertical-align:top;
+	transform:rotate(7deg);
+  -ms-transform:rotate(90deg); /* IE 9 */
+  -moz-transform:rotate(90deg); /* Firefox */
+  -webkit-transform:rotate(90deg); /* Safari and Chrome */
+  -o-transform:rotate(90deg); /* Opera */}
+
+.msg{
+  border-radius: 20px 0px 20px 0px ;
+}
+
+.rottext{
+  writing-mode: vertical-lr; text-orientation: sideways; transform: rotate(-160deg);
+}

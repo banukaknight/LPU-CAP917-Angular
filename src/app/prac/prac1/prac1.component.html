@@ -1,0 +1,38 @@
+<div class="p-4 container-responsive">
+
+  <h2>IT Dad jokes. Step with care.</h2>
+
+
+
+  <div class="row">
+
+    <div class="card col-sm-6 col-md-4 col-lg-3">
+      <div class="p-2" >
+        <h6 class="card-title">Create your own Joke</h6>
+
+        <div class="form-group">
+          <input #setup type="text" class="form-control" placeholder="Enter the setup" required minlength='5'>
+
+          <input #delivery type="text" class="form-control" placeholder="Enter the delivery" required minlength='5'>
+        </div>
+        <button type="button" class="btn btn-sm btn-info" (click)="createJoke(setup.value, delivery.value)">Create</button>
+      </div>
+    </div>
+
+
+
+    <div class="card col-sm-6 col-md-4 col-lg-3" *ngFor="let joke of jokes">
+      <div class="card-body">
+        <h6 class="card-title">{{joke.setup}}</h6>
+        <p class="card-text" [hidden]="!joke.hide">{{joke.delivery}}</p>
+        <button class="btn btn-sm btn-primary" (click)="toggle(joke)">Tell Me!</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <marquee direction="right">prac1.component.html</marquee>
+</div>
