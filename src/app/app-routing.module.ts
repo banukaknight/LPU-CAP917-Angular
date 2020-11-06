@@ -21,6 +21,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { JsonpComponent } from './jsonp/jsonp.component';
 import { Prac1Component } from './prac/prac1/prac1.component';
 import { Prac2Component } from './prac/prac2/prac2.component';
+import { Ca3Component } from './ca3/ca3.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
@@ -43,6 +44,7 @@ const routes: Routes = [
 	{ path: 'JsonP', component: JsonpComponent },
 	{ path: 'Prac/Prac1', component: Prac1Component },
 	{ path: 'Prac/Prac2', component: Prac2Component },
+	{ path: 'CA3', component: Ca3Component },
 
 
   // otherwise redirect to home

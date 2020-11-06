@@ -38,6 +38,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { JsonpComponent } from './jsonp/jsonp.component';
 import { Prac1Component } from './prac/prac1/prac1.component';
 import { Prac2Component } from './prac/prac2/prac2.component';
+import { Ca3Component } from './ca3/ca3.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { Prac2Component } from './prac/prac2/prac2.component';
     ObservableComponent,
     JsonpComponent,
     Prac1Component,
-    Prac2Component
+    Prac2Component,
+    Ca3Component
   ],
   imports: [
     BrowserModule,
