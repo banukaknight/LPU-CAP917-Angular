@@ -7,7 +7,6 @@ import { BcaComponent } from './bca/bca.component';
 import { Ca1Component } from './ca1/ca1.component';
 import { Ca1t1Component } from './ca1t1/ca1t1.component';
 import { Ca1t2Component } from './ca1t2/ca1t2.component';
-import { ClassComponent } from './class/class.component';
 import { BindingComponent } from './binding/binding.component';
 import { EventsComponent } from './events/events.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
@@ -22,11 +21,11 @@ import { JsonpComponent } from './jsonp/jsonp.component';
 import { Prac1Component } from './prac/prac1/prac1.component';
 import { Prac2Component } from './prac/prac2/prac2.component';
 import { Ca3Component } from './ca3/ca3.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const routes: Routes = [
   //routing stuff by bk_self
 	{ path: '', component: HomeComponent },
-	{ path: 'Class', component: ClassComponent },
 	{ path: 'BCA', component: BcaComponent },
 	{ path: 'CA1-Inject', component: Ca1Component },
 	{ path: 'CA1-Temp1', component: Ca1t1Component },
@@ -45,6 +44,8 @@ const routes: Routes = [
 	{ path: 'Prac/Prac1', component: Prac1Component },
 	{ path: 'Prac/Prac2', component: Prac2Component },
 	{ path: 'CA3', component: Ca3Component },
+	{ path: 'Navigation', component: NavigationComponent },
+
 
 
   // otherwise redirect to home
@@ -61,7 +62,7 @@ export class AppRoutingModule { }
 //export const appRoutingModule = RouterModule.forRoot(routes);
 //this array is (meant to hold all components in 1 array of components)
 export const routingComponents = [ HomeComponent, BcaComponent, Ca1Component, Ca1t1Component,
-	Ca1t2Component, ClassComponent, BindingComponent, EventsComponent, TwoWayBindingComponent,
+	Ca1t2Component, BindingComponent, EventsComponent, TwoWayBindingComponent,
 	PipesComponent, Form1Component, Form2validateComponent, DirectivesComponent, BootsComponent,
   InjectsComponent, ObservableComponent, JsonpComponent, Prac1Component, Prac2Component,
   Ca3Component  ];

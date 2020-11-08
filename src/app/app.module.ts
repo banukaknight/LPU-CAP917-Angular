@@ -17,6 +17,9 @@ import { Serv4observableService } from './serv4observable.service';
 import { Serv4jsonpService } from './serv4jsonp.service';
 import { Serv4pracService_Friends, Serv4pracService_Jokes } from "./serv4prac.service";
 
+//import sub-components by bk - user defined (no longer need to import as it's included through array - routingComponents)
+import { NavigationComponent } from './navigation/navigation.component';
+
 
 //import sub-components by bk - user defined (no longer need to import as it's included through array - routingComponents)
 // import { HomeComponent } from './home/home.component';
@@ -24,7 +27,6 @@ import { Serv4pracService_Friends, Serv4pracService_Jokes } from "./serv4prac.se
 // import { Ca1Component } from './ca1/ca1.component';
 // import { Ca1t1Component } from './ca1t1/ca1t1.component';
 // import { Ca1t2Component } from './ca1t2/ca1t2.component';
-// import { ClassComponent } from './class/class.component';
 // import { BindingComponent } from './binding/binding.component';
 // import { EventsComponent } from './events/events.component';
 // import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
@@ -45,11 +47,12 @@ import { Serv4pracService_Friends, Serv4pracService_Jokes } from "./serv4prac.se
     AppComponent,
     /* no longer needed to import 1 by 1, done as array - routingComponents*/
     // HomeComponent, BcaComponent, Ca1Component, Ca1t1Component, Ca1t2Component,
-    // ClassComponent, BindingComponent, EventsComponent, TwoWayBindingComponent, PipesComponent,
+    // BindingComponent, EventsComponent, TwoWayBindingComponent, PipesComponent,
     // Form1Component, Form2validateComponent, DirectivesComponent, BootsComponent,
     // InjectsComponent, ObservableComponent, JsonpComponent, Prac1Component, Prac2Component,
     // Ca3Component,
     routingComponents,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
