@@ -5,7 +5,9 @@
   <!-- Navigation bar to browse sub-pages -->
 
   <nav class="navbar nav-pills navbar-expand-md navbar-dark bg-dark py-0">
-    <a class="navbar-brand disabled py-0"><img src="./assets/logos/bkbracket.png" style="max-height: 1.5em;  width: auto;"></a>
+    <a class="navbar-brand btn py-0" data-toggle="modal" data-target="#exampleModalCenter2">
+      <img src="./assets/logos/bkbracket.png" style="max-height: 1.5em;  width: auto;">
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText1" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -106,6 +108,23 @@
 
   <!-- main content container -->
   <div class="container-fluid div_router">
+
+    <!-- Modal for portfolio -->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div style="width: auto; display: block; margin: auto;">
+              <object type="text/html" data="https://banukaknight.github.io/" style="height:80vh; width:100%; overflow:auto; border:1px dotted black">
+              </object>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <! -- end modal -->
+
+
     <router-outlet></router-outlet>
   </div>
 

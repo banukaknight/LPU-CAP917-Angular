@@ -58,4 +58,10 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 //added for routing by bk
-export const appRoutingModule = RouterModule.forRoot(routes);
+//export const appRoutingModule = RouterModule.forRoot(routes);
+//this array is (meant to hold all components in 1 array of components)
+export const routingComponents = [ HomeComponent, BcaComponent, Ca1Component, Ca1t1Component,
+	Ca1t2Component, ClassComponent, BindingComponent, EventsComponent, TwoWayBindingComponent,
+	PipesComponent, Form1Component, Form2validateComponent, DirectivesComponent, BootsComponent,
+  InjectsComponent, ObservableComponent, JsonpComponent, Prac1Component, Prac2Component,
+  Ca3Component  ];
