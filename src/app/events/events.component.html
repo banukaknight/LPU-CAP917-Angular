@@ -2,6 +2,9 @@
 
 <h1> Event Handling</h1>
 
+<img *ngFor = "let i of [1,2]" class="img-fluid" src="./assets/screens/events/{{i}}.png">
+
+
 <hr>
 <button (click)=clicked1st($event)>Pass Event name</button>
 <h5>Event Name of (click): {{event1}}</h5>

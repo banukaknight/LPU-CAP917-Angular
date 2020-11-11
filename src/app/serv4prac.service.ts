@@ -20,8 +20,8 @@ export class Serv4pracService_Friends {
   };
 }
 
-
-export class Serv4pracService_Jokes {
+//------- a class that returns simple list of jokes--------------------//
+export class Serv4pracService_ITJokes {
   getJokesList() {
     return [
       {
@@ -268,4 +268,34 @@ export class Serv4pracService_Jokes {
 };
   constructor() { }
 
-}
+}// Serv4pracService_ITJokes -end-----
+
+//
+// //--------- implementing domain modal concept (Jokes)
+// export class Serv4pracService_Joke {
+//   setup : string;
+//   delivery: string;
+//   hide: boolean;
+// 
+//   constructor(setup:string, delivery: string){
+//     this.setup = setup;
+//     this.delivery = delivery;
+//     this.hide = true;
+//   }
+//   toggle2() {this.hide = !this.hide;}
+// }// Serv4pracService_Jokes2-end----------
+//
+// //JokeListComponent
+// export class Serv4pracService_JokesList {
+//  jokesLIST: Serv4pracService_Joke[];
+//  constructor() {
+//    this.jokesLIST =[
+//      new Serv4pracService_Joke ("Hello", "There"),
+//      new Serv4pracService_Joke ("Hello2", "There2")
+//    ];
+//  }
+//
+//  getJokes(){
+//    return jokesLIST;
+//  }
+// }

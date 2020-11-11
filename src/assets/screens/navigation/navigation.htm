@@ -1,0 +1,1170 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman",serif;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F3763;
+	font-weight:normal;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+code
+	{font-family:"Courier New";}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.pln
+	{mso-style-name:pln;}
+span.kwd
+	{mso-style-name:kwd;}
+span.pun
+	{mso-style-name:pun;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F3763;}
+span.typ
+	{mso-style-name:typ;}
+span.str
+	{mso-style-name:str;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link="#0563C1" vlink="#954F72" style="background-color:white">
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b><span style='font-size:24.0pt;line-height:107%'>IN APP
+NAVIGATION</span></b></p>
+
+<p class=MsoNormal>Notes by Banuka (src: <a
+href="https://angular.io/guide/router">https://angular.io/guide/router</a> )</p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>In
+a single-page app, you change what the user sees by showing or hiding portions
+of the display that correspond to particular components, rather than going out
+to the server to get a new page. As users perform application tasks, they need
+to move between the different&nbsp;</span></span><span style='font-size:10.5pt;
+line-height:107%;font-family:"Helvetica",sans-serif;color:black;letter-spacing:
+.25pt;background:white'>views</span><span style='font-size:10.5pt;line-height:
+107%;font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;
+background:white'>&nbsp;that you have defined.</span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>To
+handle the navigation from one&nbsp;</span></span><a
+href="https://angular.io/guide/glossary#view" style='line-height:2.4rem;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;word-spacing:0px'><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#1976D2;letter-spacing:.25pt;background:white'>view</span></a><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;to the next, you use the Angular&nbsp;</span></span><code><span
+style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:.25pt;
+background:white'><a href="https://angular.io/api/router/Router"
+style='font-size:inherit;line-height:2.4rem;font-weight:inherit;color:inherit;
+letter-spacing:0.03rem;cursor:pointer'>Router</a></span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>. The&nbsp;</span></span><code><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'><a
+href="https://angular.io/api/router/Router" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'>Router</a></span></code><span style='font-size:10.5pt;
+line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:
+.25pt;background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;enables navigation by interpreting a browser URL as an
+instruction to change the view.</span></span></p>
+
+<p class=MsoNormal style='margin-top:24.0pt;margin-right:0in;margin-bottom:
+.25in;margin-left:0in;line-height:normal'><span style='font-size:18.0pt;
+font-family:"Helvetica",sans-serif;color:#333333'>Generate an app with routing
+enabled</span></p>
+
+<p class=MsoNormal><span class=pln><span style='font-size:9.5pt;line-height:
+107%;font-family:"Courier New";color:#17FF0B;background:#444444'>ng </span></span></span><span
+class=kwd><span style='font-size:9.5pt;line-height:107%;color:#17FF0B;
+background:#444444'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>new</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+color:#17FF0B;background:#444444'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> routing</span></span></span><span
+class=pun><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+color:#17FF0B;background:#444444'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>-</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+color:#17FF0B;background:#444444'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>app </span></span></span><span
+class=pun><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+color:#17FF0B;background:#444444'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>–</span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+color:#17FF0B;background:#444444'>routing</span></span></span></p>
+
+<h3 style='margin-top:.25in;margin-right:0in;margin-bottom:9.0pt;margin-left:
+0in'><b><span style='font-family:"Helvetica",sans-serif;color:#333333'>Adding
+components for routing</span></b></h3>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>To
+use the Angular router, an app needs to have at least two components so that it
+can navigate from one to the other. To create a component using the CLI, enter
+the following at the command line where&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>first</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;is the name of your component:</span></span></p>
+
+<p class=MsoNormal><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#17FF0B;background:#444444'>ng generate component first</span></span></p>
+
+<p class=MsoNormal><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#17FF0B;background:#444444'>ng generate component second</span></span></p>
+
+<h3 style='margin-top:0in'><b><span style='font-family:"Helvetica",sans-serif;
+color:#333333'>Importing your new components</span></b></h3>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>To
+use your new components, import them into&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>AppRoutingModule</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;at the top of the file, as follows</span></span></p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>In </span><span
+style='font-family:"Helvetica",sans-serif;color:#FAFAFA;background:#1E88E5'>AppRoutingModule</span></span></p>
+
+<p class=MsoNormal><span class=kwd><span style='font-size:9.5pt;line-height:
+107%;font-family:"Courier New";color:blue'>import</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;color:black'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=pun></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#666600'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>{</span></span></span><span class=pln><span style='font-size:9.5pt;
+line-height:107%;color:black'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'> </span></span><span class=typ></span><span style='font-size:9.5pt;
+line-height:107%;font-family:"Courier New";color:red'><span style='line-height:
+2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>FirstComponent</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;color:black'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=pun></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#666600'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>}</span></span></span><span class=pln><span style='font-size:9.5pt;
+line-height:107%;color:black'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'> </span></span><span class=kwd></span><span style='font-size:9.5pt;
+line-height:107%;font-family:"Courier New";color:blue'><span style='line-height:
+2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>from</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;color:black'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=str></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#880000'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>'./first/first.component'</span></span></span><span class=pun><span
+style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#666600'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>;</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;color:black'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=kwd></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:blue'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>import</span></span></span><span class=pln><span style='font-size:9.5pt;
+line-height:107%;color:black'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'> </span></span><span class=pun></span><span style='font-size:9.5pt;
+line-height:107%;font-family:"Courier New";color:#666600'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>{</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;color:black'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=typ></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:red'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>SecondComponent</span></span></span><span class=pln><span
+style='font-size:9.5pt;line-height:107%;color:black'><span style='line-height:
+2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=pun></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#666600'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>}</span></span></span><span class=pln><span style='font-size:9.5pt;
+line-height:107%;color:black'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'> </span></span><span class=kwd></span><span style='font-size:9.5pt;
+line-height:107%;font-family:"Courier New";color:blue'><span style='line-height:
+2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>from</span></span></span><span
+class=pln><span style='font-size:9.5pt;line-height:107%;color:black'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'> </span></span><span
+class=str></span><span style='font-size:9.5pt;line-height:107%;font-family:
+"Courier New";color:#880000'><span style='line-height:2.4rem;font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;white-space:pre-wrap;
+widows: 2;-webkit-text-stroke-width: 0px;background-color:rgba(241, 241, 241, 0.2);
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'>'./second/second.component'</span></span></span><span class=pun><span
+style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#666600'><span
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;white-space:pre-wrap;widows: 2;-webkit-text-stroke-width: 0px;
+background-color:rgba(241, 241, 241, 0.2);text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>;</span></span></span></p>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+0in'><span style='font-family:"Helvetica",sans-serif;color:#333333;font-weight:
+normal'>Defining a basic route (3 basic steps)</span></h2>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in'><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'>Import the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'>AppRoutingModule</span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;into&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;color:#444444;letter-spacing:.25pt;
+background:white'>AppModule</span></code><span style='font-size:10.5pt;
+font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;
+background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;and add it to the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'>imports</span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;array.</span> (auto done)</span></h2>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in'><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;background:
+#1E88E5'>Default CLI AppModule with routing</span></span></h2>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.5in;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>import { BrowserModule }
+  from '@angular/platform-browser';</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>import { NgModule } from
+  '@angular/core';</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>import { AppRoutingModule
+  } from './app-routing.module'; // CLI imports AppRoutingModule</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>import { AppComponent }
+  from './app.component';</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>@NgModule({</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  declarations: [</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>    AppComponent</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  ],</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  imports: [</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>    BrowserModule,</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>    AppRoutingModule //
+  CLI adds AppRoutingModule to the AppModule's imports array</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  ],</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  providers: [],</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  bootstrap:
+  [AppComponent]</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>})</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>export class AppModule { }</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in'><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'>&nbsp;</span></h2>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in;text-indent:-.25in'><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'>Import&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'><a
+href="https://angular.io/api/router/RouterModule" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Times New Roman",serif'>RouterModule</span></a></span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;and&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;color:#444444;letter-spacing:.25pt;
+background:white'><a href="https://angular.io/api/router/Routes"
+style='font-size:inherit;line-height:2.4rem;font-weight:inherit;color:inherit;
+letter-spacing:0.03rem;cursor:pointer'><span style='font-family:"Times New Roman",serif'>Routes</span></a></span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;into your routing module.</span><br>
+(The Angular CLI performs this step automatically. The CLI also sets up a&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'><a
+href="https://angular.io/api/router/Routes" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Times New Roman",serif'>Routes</span></a></span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;array for your routes and configures the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'>imports</span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;and&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;color:#444444;letter-spacing:.25pt;
+background:white'>exports</span></code><span style='font-size:10.5pt;
+font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;
+background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;float:none;word-spacing:0px'>&nbsp;arrays for&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'>@<a
+href="https://angular.io/api/core/NgModule" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Times New Roman",serif'>NgModule</span></a>()</span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>.</span> )</span></h2>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in'><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;letter-spacing:
+.25pt;background:#1E88E5'>CLI app routing module</span></span></h2>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.5in;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>import { NgModule } from
+  '@angular/core';</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>import { Routes,
+  RouterModule } from '@angular/router'; // CLI imports router</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>const routes: Routes = [];
+  // sets up routes constant where you define your routes</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='background:white'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>// configures NgModule
+  imports and exports</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>@NgModule({</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  imports:
+  [RouterModule.forRoot(routes)],</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  exports: [RouterModule]</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>})</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>export class
+  AppRoutingModule { }</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in;text-indent:-.25in'><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'>Define your routes in your&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'><a
+href="https://angular.io/api/router/Routes" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Times New Roman",serif'>Routes</span></a></span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;array.</span></span></h2>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in'><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'>Each route in this array
+is a JavaScript object that contains two properties. The first property,&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'>path</span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>, defines the URL path for the route. The second property,&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+color:#444444;letter-spacing:.25pt;background:white'>component</span></code><span
+style='font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>, defines the component Angular should use for the
+corresponding path.</span></span></h2>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in'><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;letter-spacing:
+.25pt;background:#1E88E5'>AppRoutingModule (excerpt</span></span></h2>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.5in;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>const routes: Routes = [</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path:
+  'first-component', component: FirstComponent },</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path:
+  'second-component', component: SecondComponent },</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>];</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+.5in;text-indent:-.25in'><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'>Add your routes to your
+application.</span></span></h2>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>Now
+that you have defined your routes, you can add them to your application. First,
+add links to the two components. Assign the anchor tag that you want to add the
+route to the&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'><a href="https://angular.io/api/router/RouterLink"
+style='font-size:inherit;line-height:2.4rem;font-weight:inherit;color:inherit;
+letter-spacing:0.03rem;cursor:pointer'><span style='font-family:"Calibri",sans-serif'>routerLink</span></a></span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;attribute. Set the value of the attribute to the
+component to show when a user clicks on each link. Next, update your component
+template to include&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>&lt;<a href="https://angular.io/api/router/RouterOutlet"
+style='font-size:inherit;line-height:2.4rem;font-weight:inherit;color:inherit;
+letter-spacing:0.03rem;cursor:pointer'><span style='font-family:"Calibri",sans-serif'>router-outlet</span></a>&gt;</span></code></p>
+
+<p class=MsoNormal><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;
+letter-spacing:.25pt;background:#1E88E5'>Template with routerLink and
+router-outlet</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>&lt;h1&gt;Angular Router
+  App&lt;/h1&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>&lt;!-- This nav gives you
+  links to click, which tells the router which route to use (defined in the
+  routes constant in  AppRoutingModule) --&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>&lt;nav&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  &lt;ul&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>    &lt;li&gt;&lt;a
+  routerLink=&quot;/first-component&quot;
+  routerLinkActive=&quot;active&quot;&gt;First Component&lt;/a&gt;&lt;/li&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>    &lt;li&gt;&lt;a
+  routerLink=&quot;/second-component&quot;
+  routerLinkActive=&quot;active&quot;&gt;Second Component&lt;/a&gt;&lt;/li&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  &lt;/ul&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>&lt;/nav&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>&lt;!-- The routed views
+  render in the &lt;router-outlet&gt;--&gt;</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>&lt;router-outlet&gt;&lt;/router-outlet&gt;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='background:white'>&nbsp;</span></p>
+
+<h3 style='margin-top:.25in;margin-right:0in;margin-bottom:9.0pt;margin-left:
+0in'><b><span style='font-family:"Helvetica",sans-serif;color:#333333'>Route
+order</span></b></h3>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>The
+order of routes is important because the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'><a
+href="https://angular.io/api/router/Router" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Calibri",sans-serif'>Router</span></a></span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;uses a first-match wins strategy when matching routes,
+so more specific routes should be placed above less specific routes. List
+routes with a static path first, followed by an empty path route, which matches
+the default route. The&nbsp;</span></span><a
+href="https://angular.io/guide/router#setting-up-wildcard-routes"
+style='line-height:2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+word-spacing:0px'><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#1976D2;letter-spacing:.25pt;background:white'>wildcard
+route</span></a><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'><span
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;float:none;word-spacing:0px'>&nbsp;comes last
+because it matches every URL and the&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'><a href="https://angular.io/api/router/Router"
+style='font-size:inherit;line-height:2.4rem;font-weight:inherit;color:inherit;
+letter-spacing:0.03rem;cursor:pointer'><span style='font-family:"Calibri",sans-serif'>Router</span></a></span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;selects it only if no other routes match first.</span></span></p>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+0in'><span style='font-family:"Helvetica",sans-serif;color:#333333;font-weight:
+normal'>Displaying a 404 page</span></h2>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>To
+display a 404 page, set up a&nbsp;</span></span><a
+href="https://angular.io/guide/router#wildcard-route-how-to" style='line-height:
+2.4rem;font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;word-spacing:0px'><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#1976D2;letter-spacing:.25pt;background:white'>wildcard route</span></a><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;with the&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>component</span></code><span style='font-size:10.5pt;
+line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:
+.25pt;background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;property set to the component you'd like to use for
+your 404 page as follows:</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>const routes: Routes = [</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path:
+  'first-component', component: FirstComponent },</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path:
+  'second-component', component: SecondComponent },</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path: '**', component:
+  PageNotFoundComponent },  // Wildcard route for a 404 page</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>];</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='background:white'>&nbsp;</span></p>
+
+<h2 style='margin:0in;margin-bottom:.0001pt'><span style='font-family:"Helvetica",sans-serif;
+color:#333333;font-weight:normal'>Setting up redirects</span></h2>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>To
+set up a redirect, configure a route with the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>path</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;you want to redirect from, the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>component</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;you want to redirect to, and a&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>pathMatch</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;value that tells the router how to match the URL</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>const routes: Routes = [</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path:
+  'first-component', component: FirstComponent },</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path:
+  'second-component', component: SecondComponent },</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path: '',  
+  redirectTo: '/first-component', pathMatch: 'full' }, // redirect to
+  `first-component`</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>  { path: '**', component:
+  PageNotFoundComponent },  // Wildcard route for a 404 page</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:black;background:white'>];</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='background:white'>&nbsp;</span></p>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+0in'><span style='font-family:"Helvetica",sans-serif;color:#333333;font-weight:
+normal'>Nesting routes</span></h2>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>As
+your application grows more complex, you may want to create routes that are
+relative to a component other than your root component. These types of nested
+routes are called child routes. This means you're adding a second&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>&lt;<a
+href="https://angular.io/api/router/RouterOutlet" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Calibri",sans-serif'>router-outlet</span></a>&gt;</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;to your app, because it is in addition to the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>&lt;<a
+href="https://angular.io/api/router/RouterOutlet" style='font-size:inherit;
+line-height:2.4rem;font-weight:inherit;color:inherit;letter-spacing:0.03rem;
+cursor:pointer'><span style='font-family:"Calibri",sans-serif'>router-outlet</span></a>&gt;</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;in&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>AppComponent</span></code><span style='font-size:10.5pt;
+line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:
+.25pt;background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>.</span></span></p>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+0in'><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;background:
+#1E88E5'>In the template</span></span></h2>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;h2&gt;First Component&lt;/h2&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;nav&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  &lt;ul&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    &lt;li&gt;&lt;a routerLink=&quot;child-a&quot;&gt;Child
+  A&lt;/a&gt;&lt;/li&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    &lt;li&gt;&lt;a routerLink=&quot;child-b&quot;&gt;Child
+  B&lt;/a&gt;&lt;/li&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  &lt;/ul&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;/nav&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;router-outlet&gt;&lt;/router-outlet&gt;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>A
+child route is like any other route, in that it needs both a&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>path</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;and a&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>component</span></code><span style='font-size:10.5pt;
+line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:
+.25pt;background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>. The one difference is that you place child routes in a&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>children</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;array within the parent route.</span></span></p>
+
+<p class=MsoNormal><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;
+background:#1E88E5'>AppRoutingModule (excerpt)</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>const routes: Routes = [</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  {</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    path: 'first-component',</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    component: FirstComponent, // this is the component with the
+  &lt;router-outlet&gt; in the template</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    children: [</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>      {</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>        path: 'child-a', // child route path</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>        component: ChildAComponent, // child route component that the
+  router renders</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>      },</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>      {</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>        path: 'child-b',</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>        component: ChildBComponent, // another child route component
+  that the router renders</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>      },</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    ],</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  },</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>];</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-top:24.0pt;margin-right:0in;margin-bottom:.25in;margin-left:
+0in'><span style='font-family:"Helvetica",sans-serif;color:#333333;font-weight:
+normal'>Using relative paths</span></h2>
+
+<p class=MsoNormal><span style='font-size:10.5pt;line-height:107%;font-family:
+"Helvetica",sans-serif;color:#444444;letter-spacing:.25pt;background:white'>Relative
+paths allow you to define paths that are relative to the current URL segment.
+The following example shows a relative route to another component,&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>second-component</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>.&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>FirstComponent</span></code><span style='font-size:
+10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;and&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>SecondComponent</span></code><span style='font-size:
+10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;are at the same level in the tree, however, the link to&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>SecondComponent</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;is situated within the&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>FirstComponent</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>, meaning that the router has to go up a level and then into
+the second directory to find the&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>SecondComponent</span></code><span style='font-size:
+10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;
+letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>. Rather than writing out the whole path to get to&nbsp;</span></span><code
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-size:9.5pt;
+line-height:107%;color:#444444;letter-spacing:.25pt;background:white'>SecondComponent</span></code><span
+style='font-size:10.5pt;line-height:107%;font-family:"Helvetica",sans-serif;
+color:#444444;letter-spacing:.25pt;background:white'><span style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>, you can use the&nbsp;</span></span><code style='font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:9.5pt;line-height:107%;color:#444444;letter-spacing:
+.25pt;background:white'>../</span></code><span style='font-size:10.5pt;
+line-height:107%;font-family:"Helvetica",sans-serif;color:#444444;letter-spacing:
+.25pt;background:white'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px'>&nbsp;notation to go up a level.</span></span></p>
+
+<p class=MsoNormal><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;
+background:#1E88E5'>In the template</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;h2&gt;First Component&lt;/h2&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;nav&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  &lt;ul&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>    &lt;li&gt;&lt;a
+  routerLink=&quot;../second-component&quot;&gt;Relative Route to second
+  component&lt;/a&gt;&lt;/li&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  &lt;/ul&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;/nav&gt;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&lt;router-outlet&gt;&lt;/router-outlet&gt;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 style='margin-top:.25in;margin-right:0in;margin-bottom:9.0pt;margin-left:
+0in'><b><span style='font-family:"Helvetica",sans-serif;color:#333333'>Specifying
+a relative route</span></b></h3>
+
+<p class=MsoNormal><span style='font-family:"Helvetica",sans-serif;color:#FAFAFA;
+background:#1E88E5'>RelativeTo</span></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=601 valign=top style='width:450.8pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>goToItems() {</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>  this.router.navigate(['items'], { relativeTo: this.route });</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>}</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

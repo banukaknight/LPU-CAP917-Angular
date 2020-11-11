@@ -9,13 +9,13 @@ import { FormsModule } from '@angular/forms';
 //needed for observable
 import { HttpClientModule } from '@angular/common/http';
 
-//import Services by bk ??? needed ? - user defined
+//import Services by bk - user defined
 import { LpuService } from './lpu.service';
 import { PracticleService } from './practicle.service';
 import { Ca1Service } from './ca1.service';
 import { Serv4observableService } from './serv4observable.service';
 import { Serv4jsonpService } from './serv4jsonp.service';
-import { Serv4pracService_Friends, Serv4pracService_Jokes } from "./serv4prac.service";
+import { Serv4pracService_Friends, Serv4pracService_ITJokes } from "./serv4prac.service";
 
 //import sub-components by bk - user defined (no longer need to import as it's included through array - routingComponents)
 import { NavigationComponent } from './navigation/navigation.component';
@@ -60,9 +60,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     FormsModule,
     HttpClientModule
   ],
-  //register Service here by bk ??? needed?
+  //register Service here by bk
   providers: [LpuService, PracticleService, Ca1Service, Serv4observableService, Serv4jsonpService,
-  Serv4pracService_Friends, Serv4pracService_Jokes],
+  Serv4pracService_Friends, Serv4pracService_ITJokes],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

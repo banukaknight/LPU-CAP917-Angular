@@ -60,6 +60,11 @@
   </form>
 </div>
 
+<img *ngFor = "let i of [1,2,3,4]" class="img-fluid" src="./assets/screens/formsboot/{{i}}.png">
+
+
+
+
 <h6>Template variable references --- #myTemplateVar="ngForm" </h6>
 <p>As soon as you import the FormsModule, this directive becomes active by default on all (form) tags. You don't need to add a special selector.
 <br>You optionally export the directive into a local template variable using ngForm as the key (ex: #myForm="ngForm"). This is optional, but useful. Many properties from the underlying FormGroup instance are duplicated on the directive itself, so a reference to it gives you access to the aggregate value and validity status of the form, as well as user interaction properties like dirty and touched.
