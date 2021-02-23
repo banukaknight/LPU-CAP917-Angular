@@ -1,0 +1,5 @@
+typescript
+-----to complie :
+tsc filemain.ts
+-----to run js file:
+node filemain.js
